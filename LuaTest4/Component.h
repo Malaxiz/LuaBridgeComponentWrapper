@@ -23,6 +23,8 @@ public:
     
     void onLoop();
     
+    LuaObject* getObject() { return &_object; }
+    
 private:
     Entity* _parent;
     LuaObject _object;

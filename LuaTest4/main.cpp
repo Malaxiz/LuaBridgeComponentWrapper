@@ -33,10 +33,18 @@ int main(int argc, const char * argv[]) {
     {
     
         LuaScript script(L, "resources/Movable.lua");
+        LuaScript script2(L, "resources/Animal.lua");
         
         Entity entity;
         entity.addComponent(&script);
-        entity.onLoop();
+        entity.onLoop();                // Create entity and run default onLoop function
+        
+        Entity entity2;
+        entity2.addComponent(&script2);
+        entity2.components["Animal"]->getObject()->beginCall("doThing");
+        entity.components["Movable"]->getObject()->pushObject();
+        entity2.components["Animal"]->getObject()->endCall(1, 0);
+        entity.onLoop();                // Create entity and run costume function with another component as an argument
         
     }
     

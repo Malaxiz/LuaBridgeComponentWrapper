@@ -38,6 +38,7 @@ public:
     void addComponent(LuaScript* script) {
         Component* component = new Component(this, script);
         components[script->getName()] = component;
+        std::cout << "Added component " << script->getName() << "\n";
     }
     
     std::map<std::string, Component*> components;
