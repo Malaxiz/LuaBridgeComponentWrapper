@@ -16,14 +16,17 @@ LuaObject::LuaObject(LuaScript* script)
     
 }
 
-
-
-void LuaObject::call(int argc, int results) {
-    lua_call(_script->getState(), argc + 1, results);
+void LuaObject::beginCall(std::string function) {
+    selectReference(function);
+    lua_pushvalue(_script->getState(), -2);
 }
 
-void LuaObject::call() {
-    call(0, 0);
+void LuaObject::endCall(int argc, int results) {
+    lua_pcall(_script->getState(), argc + 1, results, 0);
+}
+
+void LuaObject::endCall() {
+    endCall(0, 0);
 }
 
 void LuaObject::selectScript() {
@@ -39,4 +42,8 @@ void LuaObject::pushObject() {
     selectScript();
     lua_pushvalue(_script->getState(), -1);
     lua_pop(_script->getState(), 1);
+}
+
+LuaScript* LuaObject::getScript() {
+    return _script;
 }

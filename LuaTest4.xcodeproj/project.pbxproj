@@ -10,6 +10,8 @@
 		F5B7ACCD1BD12BA400EDD38A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5B7ACCC1BD12BA400EDD38A /* main.cpp */; };
 		F5B7ACD81BD12DF000EDD38A /* LuaScript.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5B7ACD61BD12DF000EDD38A /* LuaScript.cpp */; };
 		F5B7ACDB1BD12ECF00EDD38A /* LuaObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5B7ACD91BD12ECF00EDD38A /* LuaObject.cpp */; };
+		F5B7ACDE1BD138CA00EDD38A /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5B7ACDC1BD138CA00EDD38A /* Entity.cpp */; };
+		F5B7ACE11BD139BD00EDD38A /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5B7ACDF1BD139BD00EDD38A /* Component.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +36,10 @@
 		F5B7ACD71BD12DF000EDD38A /* LuaScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaScript.h; sourceTree = "<group>"; };
 		F5B7ACD91BD12ECF00EDD38A /* LuaObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaObject.cpp; sourceTree = "<group>"; };
 		F5B7ACDA1BD12ECF00EDD38A /* LuaObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaObject.h; sourceTree = "<group>"; };
+		F5B7ACDC1BD138CA00EDD38A /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
+		F5B7ACDD1BD138CA00EDD38A /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		F5B7ACDF1BD139BD00EDD38A /* Component.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Component.cpp; sourceTree = "<group>"; };
+		F5B7ACE01BD139BD00EDD38A /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,10 @@
 				F5B7ACD71BD12DF000EDD38A /* LuaScript.h */,
 				F5B7ACD91BD12ECF00EDD38A /* LuaObject.cpp */,
 				F5B7ACDA1BD12ECF00EDD38A /* LuaObject.h */,
+				F5B7ACDC1BD138CA00EDD38A /* Entity.cpp */,
+				F5B7ACDD1BD138CA00EDD38A /* Entity.h */,
+				F5B7ACDF1BD139BD00EDD38A /* Component.cpp */,
+				F5B7ACE01BD139BD00EDD38A /* Component.h */,
 			);
 			path = LuaTest4;
 			sourceTree = "<group>";
@@ -134,9 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5B7ACDE1BD138CA00EDD38A /* Entity.cpp in Sources */,
 				F5B7ACCD1BD12BA400EDD38A /* main.cpp in Sources */,
 				F5B7ACD81BD12DF000EDD38A /* LuaScript.cpp in Sources */,
 				F5B7ACDB1BD12ECF00EDD38A /* LuaObject.cpp in Sources */,
+				F5B7ACE11BD139BD00EDD38A /* Component.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

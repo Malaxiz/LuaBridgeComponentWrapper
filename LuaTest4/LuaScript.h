@@ -35,10 +35,12 @@ public:
     
     lua_State* getState();
     std::string getPath();
+    std::string getName();
     
 private:
     lua_State* _L;
     std::string _path;
+    std::string _scriptName;
     luabridge::LuaRef _objectCreationFunction;
     
 };

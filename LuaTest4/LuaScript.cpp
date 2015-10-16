@@ -33,5 +33,15 @@ luabridge::LuaRef LuaScript::getObject() {
     return _objectCreationFunction();
 }
 
-lua_State* LuaScript::getState() { return _L; }
-std::string LuaScript::getPath() { return _path; }
+lua_State* LuaScript::getState() {
+    return _L;
+}
+
+std::string LuaScript::getPath() {
+    return _path;
+}
+
+std::string LuaScript::getName() {
+    std::string dir = _path.substr(_path.find_last_of("/") + 1, _path.size() - _path.find_last_of("/"));
+    return dir.substr(0, dir.find("."));
+}

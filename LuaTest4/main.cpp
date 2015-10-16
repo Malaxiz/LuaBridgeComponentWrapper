@@ -9,26 +9,8 @@
 #include <iostream>
 
 #include "LuaScript.h"
+#include "Entity.h"
 
-
-class Body {
-    
-public:
-    Body() {velX = velY = 10.0f;}
-    
-    float velX, velY;
-    
-};
-
-class Entity {
-    
-public:
-    Entity() { body = new Body; }
-    ~Entity() { delete body; }
-    
-    Body* body;
-    
-};
 
 int main(int argc, const char * argv[]) {
     
@@ -48,34 +30,15 @@ int main(int argc, const char * argv[]) {
     
     luaL_dofile(L, "resources/class.lua");
     
-    // ==
+    {
     
-    luaL_dofile(L, "resources/Movable.lua");
-    auto createFunction = luabridge::getGlobal(L, "create");
-    
-    // -
-    
-    Entity entity;
-    auto human2 = createFunction(); //luabridge::getGlobal(L, "component");
-    
-    human2.beginCall();
-    ((luabridge::LuaRef)human2["onLoop"]).beginCall();
-    lua_pushvalue(L, -2);
-    luabridge::Stack<Entity*>::push(L, &entity);
-    lua_pcall(L, 2, 0, 0);
-    
-    // -
-    
-    Entity entity2;
-    auto human3 = createFunction();
-    
-    human3.beginCall();
-    ((luabridge::LuaRef)human3["onLoop"]).beginCall();
-    lua_pushvalue(L, -2);
-    luabridge::Stack<Entity*>::push(L, &entity2);
-    lua_pcall(L, 2, 0, 0);
-    
-    // ==
+        LuaScript script(L, "resources/Movable.lua");
+        
+        Entity entity;
+        entity.addComponent(&script);
+        entity.onLoop();
+        
+    }
     
     lua_close(L);
 }

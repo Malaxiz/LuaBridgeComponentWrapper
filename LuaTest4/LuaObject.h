@@ -20,14 +20,16 @@ class LuaObject {
 public:
     LuaObject(LuaScript* script);
     
-    
-    void call(int argc, int results);
-    void call();
+    void beginCall(std::string function);
+    void endCall(int argc, int results);
+    void endCall();
     
     void selectScript();
     void selectReference(std::string reference);
     
     void pushObject();
+    
+    LuaScript* getScript();
     
 private:
     LuaScript* _script;
